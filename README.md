@@ -1,130 +1,157 @@
-# Project Zeppelin / GDG DevFest 2014 site template
-
-### About
-Project Zeppelin allows you to setup awesome GDG DevFest site in 5 minutes.
-
-Project is built on top of [Jekyll](http://jekyllrb.com/) - simple, blog-aware, static site generator. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your website from GitHub’s servers for free. [Learn more about Jekyll](http://jekyllrb.com/).
-
-Template is brought by [GDG Lviv](http://lviv.gdg.org.ua/) team.
-
-### Live demo http://gdg-x.github.io/zeppelin/
-
-#### Automated version with Grunt <https://github.com/gdg-x/zeppelin-grunt>
-
-### Features
-* Easy to setup
-* Simple and responsive design
-* Integrated speakers and sessions management
-* SVG icons
-* SEO friendly
+## 工作说明 SOW
 
 
-### Quick-start guide
-1. [Fork](https://github.com/gdg-x/zeppelin/fork) this repo
-2. Clone locally
-3. Update ```_config.yml```
-4. Select what content blocks do you need
-5. Push changes to ```gh-pages``` branch
-6. Enjoy your awesome DevFest site at ```http://[your github name].github.io/zeppelin/```
+### 目标结果说明
 
-Or watch project presentation from [GDG[x] Townhall meeting](http://www.youtube.com/watch?v=xYmhheoLjcI). Slides available [here](https://docs.google.com/presentation/d/19aM7yNl_orDaCNND5LpCY3fShb6PyMltnzYfKvV8R_8/edit?usp=sharing)
+目标网站网址： https://conf.devopsmeetup.com/ 这是社区官网的一个二级域名，已经配置好了，部署在一个腾讯云赞助的虚拟机上。
+
+网站的代码库： https://github.com/DevopsChina/conf.git
+
+网站模板的演示站点： https://hoverboard-master.web.app/ 「墙外」
+
+希望可以在 GitHub 上通过 Action 的 CI 功能直接持续部署到目标的网站服务器。
+
+### [SOW] 工作范围说明
+
+* 本地化这个 Google 的开发者会议模板
+  * 评估这个模板的可用性，如果在墙内用不了，需要找类似的替代品，但是下面的网页内容更新部分不变。
+  * 汉化
+  * 替换依赖的墙外的库和资源
+  * 替换 google 地图为百度地图
+  * sign in 的功能不是必须的（待前端开发评估工作量后决定取舍）
+* 主页文字和内容的编辑和初始化填充，一个很长的页面。
+* 日程页面的编辑和初始化填充，一个很长的页面，内容比较多，随着日程的搭建逐步更新。
+* 讲师页面的编辑和初始化填充，一个很长的页面，内容比较多，随着日程的搭建逐步更新。
+* 团队页面的编辑和初始化填充，一个比较短的页面，内容不多，不变。
+* 博客文章的更新，会前会后的相关信息的发布，最多不会超过 4 条新闻。
+* 相关人员头像图片，页面上所有图片的处理，需要简单的图片处理技能，处理不了的或者需求美工参与的图片，提交需求给社区的美工统一设计替换。
+* 会后经常瞬间总结文案和图片的上传，本年度的更新结束
+* 为下一年的更新做一些规划和设计，将 2020 年度的网站归档到 https://conf.devopsmeetup.com/2020/ 的目录中；将首页更新为 2021 年的赞助商招募状态。
+* 基于腾讯云提供的 CDN 优化网站的打开速度，目标部署的 web 服务器也在腾讯云上。
+
+工作量评估：
+
+* 工期 10 月， 11 月，12 月；为期 3 个月。
+* 开发者需求数量：2 名前端开发
+* 总工时概算：网站发布初期需要 2 人全职工作，3 周完成初始化发布工作。网站发布以后，进入日常更新和维护期。更新阶段需要一个人每周工作两天，随着日程的进展更新讲师和日程的资料。
+* 总工作量 3 个人月。 下一年 2021 年需要 1.5 个人月。
 
 
-## Local development
+<p align="center">
+<img width="800px" src="https://user-images.githubusercontent.com/2954281/42683571-55ba6be6-8696-11e8-8ff7-e9acd0db63e8.png">
+</p>
+<p align="center">
+<a href="https://hoverboard-master.web.app" align="center">:zap: Live demo</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="#getting-started">:rocket: Get Started</a>
+</p>
 
-Check if you have [all requirements for local environment](http://jekyllrb.com/docs/installation/).
-To install all development dependencies install [Bundler](http://bundler.io/).
-```bash
-    gem install bundler
+[![Build Status](https://github.com/gdg-x/hoverboard/workflows/Pre%20Merge%20Checks/badge.svg)](https://github.com/gdg-x/hoverboard/actions) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgdg-x%2Fhoverboard.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgdg-x%2Fhoverboard?ref=badge_shield)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7973ac656dc94e42858ce640bb02de58)](https://www.codacy.com/app/pamuditha/hoverboard?utm_source=github.com&utm_medium=referral&utm_content=pamuditha/hoverboard&utm_campaign=Badge_Grade)
+
+## Overview
+
+Project Hoverboard is the conference website template that helps you to set up a mobile-first conference website with blog, speaker and schedule management in a few minutes.
+
+The template is created based on 7 years of [GDG Lviv](https://www.meetup.com/GDG-Lviv/) team experience of running conferences and feedback from more than 500 event organizers from all around the world who were using previous Hoverboard versions.
+
+Our goal is to allow event organizers to set up a professional conference website with minimum resources. To get started you need only basic knowledge of web technologies and a free Firebase account.
+
+## Features
+
+| Feature                              | Description                                                                                                                  |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| **Fast and optimized**               | 91/100 PWA on [Lighthouse](https://www.webpagetest.org/lighthouse.php?test=180111_1P_027a041bc5102982f074014807320a86&run=3) |
+| **Works offline**                    | shitty WiFi on the venue is not a problem anymore                                                                            |
+| **Mobile-first**                     | layouts optimized for small screens, Hoverboard can be installed as a native app on your phone                               |
+| **Push notifications**               | remind about sessions in My schedule, session feedback or target users with a custom message                                 |
+| **SEO optimized**                    | index all content and get to the top in search results                                                                       |
+| **Speakers and schedule management** | keep and update all information in the Firebase                                                                              |
+| **My schedule**                      | let attendees save sessions they want to visit                                                                               |
+| **Customizable theme**               | change colors to match your style                                                                                            |
+| **Blog**                             | post announcements, updates and useful information                                                                           |
+
+## Getting Started
+
+:first_quarter_moon_with_face: Read the [set up guide](/docs/tutorials/00-set-up.md) or checkout the [full documentation](/docs/).
+
+## Updating
+
+Here is a git workflow for updating your fork (or downloaded copy) to the latest version:
+
+```console
+git remote add upstream https://github.com/gdg-x/hoverboard.git
+git fetch upstream
+git merge upstream/main
+# resolve the merge conflicts in your editor
+git add . -u
+git commit -m 'Updated to the latest version'
 ```
-and run next command from root folder:
 
-```bash
-  bundle install
-```  
+## Documentation
 
-To start Jekyll run:
-```bash
-    jekyll serve -w
-```
-Site will be available at http://127.0.0.1:4000/zeppelin/ or http://localhost:4000/zeppelin/ (on Windows)
+The [Getting Started guide](#getting-started) is probably a good first point of call! <br>
+:book: [Full documentation](/docs/).
 
-**NOTE:** in this mode all changes to html and data files will be automatically regenerated, but after changing ```_config.yml``` you have to restart server.
+## Compatibility
 
-### Sass(Compass) support
-**Note:** You need to install [Node.js](http://nodejs.org/download/)
+:white_check_mark: Compatible with **latest two** major versions of of browsers that support [ES Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
-To watch changes of `.sass` files and compile it to the `.css` on a fly change property `safe: true` to `safe: false` in `_config.yml`.
-**Note: It works only on local machine, because GitHub runs Jekyll in `--save` [mode](https://help.github.com/articles/using-jekyll-with-pages/#configuration-overrides)**
+## Technology Stack
 
-Learn more about Sass development from [documentation](https://github.com/gdg-x/zeppelin/wiki/Sass-development).
+- Polymer 3
+- Redux
+- Firebase
+- Service Worker
+- CSS Grid
 
+## Contributing
 
-### Resource optimizations (optional)
+Awesome! Contributions of all kinds are greatly appreciated. To help smoothen the process we have a few non-exhaustive guidelines to follow which should get you going in no time.
 
-You can optimize images and minify css and javascript automatically (for now only on Windows).
-But for Mac OS users available amazing tool - [imageoptim](https://imageoptim.com/). Thanks [@raphaelsavina](https://github.com/raphaelsavina) for link.
-Optimize all images by running this script from `/automation/images/` folder:
-```bash
-    all_image_optimization.bat -d -jtran -pout -pquant -optip -gsicle -svgo
-```
+### Good First Issue
 
-To minify CSS and JS run `minify_js.bat` (for Windows) and `minify_js.sh` (for Linux and MacOS) from `/automation/minifying/` folder:
-```bash
-    minify_js.bat
-```
+Issues labeled [`good first issue`](https://github.com/gdg-x/hoverboard/labels/good%20first%20issue) are a great way to ease into development on this project.
 
-Learn more about available optimization options from [documentation](https://github.com/gdg-x/zeppelin/wiki/Resources-optimizations).
+### Help Wanted Label
 
-### Documentation
-Quick-start guide is not enough? Checkout [full documentation](https://github.com/gdg-x/zeppelin/wiki).
+Any other issue labeled [`help wanted`](https://github.com/gdg-x/hoverboard/labels/help%20wanted) is ready for a PR.
 
-### Used libraries
-* [Bootstrap](https://github.com/twbs/bootstrap)
-* [Animate.css](https://github.com/daneden/animate.css)
-* [Waves](https://github.com/publicis-indonesia/Waves)
-* [jquery.appear](https://github.com/bas2k/jquery.appear)
-* [jQuery countTo Plugin](https://github.com/mhuggins/jquery-countTo)
-* [Typed.js](https://github.com/mattboldt/typed.js)
-* [Sticky-kit](https://github.com/leafo/sticky-kit)
+### Using GitHub Issues
 
-### Who is using template?
-Going to use template? Go on! The only thing we ask - let us know at [*lviv@gdg.org.ua*](mailto:lviv@gdg.org.ua) so we can include you to this list, or make a pull request.
+- Feel free to use GitHub issues for questions, bug reports, and feature requests
+- Use the search feature to check for an existing issue
+- Include as much information as possible and provide any relevant resources (Eg. screenshots)
+- For bug reports ensure you have a reproducible test case
+- A pull request with a breaking test would be super preferable here but isn't required
 
-| | | |
-|------|------|------|
-| [GDG DevFest Ukraine 2014](http://devfest.gdg.org.ua/) | [GDG DevFest Istanbul 2014](http://2014.devfesttr.com/) | [GDG Bangalore Site](http://gdgbangalore.github.io/) |
-| [GDG DevFest Omsk 2014](http://gdg-devfest-omsk.org/) | [2014 南阳 GDG Devfest 大会](http://devfest.gdgny.org) | [DevFest Nordeste 2014](http://2014.devfestne.com.br/) |
-| [GDG DevFest The Netherlands](http://www.devfest.nl/) | [DevFest Centro-Oeste 2014](http://www.devfestcentrooeste.com.br/) | [Android DevFest Space Coast](http://gdg-space-coast.github.io/zeppelin/) |
-| [DevFest SP 2014](http://sp.devfest.com.br/) | [DevFest in Baroda](http://devfest.gdgbaroda.com/) | [GDG Hi Pic (France)](http://maximemularz.github.io/zeppelin/) |
-| [GDG DevFest Córdoba 2014](http://gdgcordoba.github.io/zeppelin/) | [GDG DevFest Düsseldorf 2014](http://www.gdg-dus.de/DevFest2014/) | [GDG Makerere DevFest 2014](http://gdgmakerere.github.io/) |
-| [GDG Dublin DevFest 2014](http://gdg-dublin.appspot.com/) | [GDG Busitema DevFest 2014](http://gdgbusitema.github.io/) | [DevFest Vienna 2014](http://www.devfest.at/) |
-| [Android Wear DevFest](http://devfest.gdgnorthjersey.com/wear2014/) | [GDG SLAU DevFest 2014](http://gdgslau.github.io/) | [Lima DevFest](http://limadevfest.com/) |
-| [GDG Korea DevFair 2014](http://devfair2014.gdg.kr/) | [GDG DevFest Kota Kinabalu 2014](http://devfest.gdgkk.info/) | [GDG DevFest Belgium](http://gdg-brussels.org/DevFest2014/) |
-| [DevFest Praha 2014](http://devfest.cz/) | [GDG DevFest Kosice](http://devfest.sk/) | [GDG DevFest Cagayan de Oro](http://devfest.gdgcdo.org/) |
-| [DevFest Birgunj](http://gdgbirgunj.github.io/DevFest2014/) | [GDG DevFest Poland](http://devfest.pl/) | [GDG DevFest Silicon Valley](http://devfest2014.gdgsv.com/) |
-| [DevFest Chennai 2014](http://devfest.gdgchennai.com/) | [GDG DevFest Bari](http://gdgbari.github.io/zeppelin/) | [GDG DevFest Ahmedabad](http://devfest.gdgahmedabad.com/) |
-| [GDG DevFest Sri Lanka](http://www.devfestlk.org/) | [GDG DevFest Tunis](http://devfest.gdgtunis.org/) | [GDG DevFest Kozhikode](http://devfest.gdgkozhikode.org/) |
-| [GDG DevFest Argentina](http://devfest.gdg.com.ar/) | [GDG DevFest Bhubaneswar](http://devfest2014.gdgbbsr.com/) | [GDG DevFest Miage Gi](http://gdgmiagegilab.github.io/) |
-| [GDG DevFest NORTE](http://norte.devfest.com.br/) | [GDG Devfest Nyeri 2014](http://devfest.gdgkimathiuniversity.com/) | [GDG DevFest Paris](http://devfest.gdgparis.com/) |
-| [GDG Akure](http://gdgakure.github.io/)|[MENAT GDG Summit 2014](http://summit.gdg-menat.com/)|[Women Techmakers Istanbul 2015](http://2015.wtmistanbul.com) |
-| [GDG DevFest Mallorca](http://devfest.gdgmallorca.com/)| [Michigan GDG DevFest 2015](http://michigandevfest.com/) | [International Women's Day](http://iwd.gdgnorthjersey.com/womeninnovation/) |
-| [Women Techmakers Tbilisi 2015](http://womentechmakers.ge/) | [Android Xtended](http://www.androidxtended.com/) |[GDG Bingham University](http://binghamuni.edu.ng/gdg)|
-| [JSday Maceio 2015](http://jsday.com.br) | [DevFest Nordeste 2015](http://2015.devfestne.com.br) | [GDG DevFest Vijayawada 2015](http://devfest.gdg-vijayawada.org) |
-| [Geek Night Recife](http://geeknightrecife.github.io/) | [IO Extended 2016 Madrid ](http://io.gdg.es/) | [AngularCamp](http://angularcamp.org/) |
-| [Mobile Era 2016](http://mobileera.rocks/) | [GDG Francisco Beltrão](http://gdg-fb.github.io) | [Women Techmakers Istanbul 2016](http://2016.wtmistanbul.com) |
-| [Droidcon Paris 2015](http://droidcon.fr) | [Android Makers Paris 2017](http://androidmakers.fr) | [Heidelberger Symposium 2017](https://heidelberger-symposium.de/) |
-| [DevFest Foumban website](http://devfestfoumban.org) | [NorthSec 2018](https://nsec.io/) | [SwiftFest 2018](http://swiftfest.io) |
-| [LASCAR Workshop](http://lascar.sda.tech/) | [Core C++ 2019](https://corecpp.org/) | [RootedCON](https://www.rootedcon.com)|
-| [Droidcon Vietnam 2018](https://droidconvn.com) | | |
+### Submitting a Pull Request
 
-### Contributors
-* Design and web development: [Oleh Zasadnyy](https://github.com/ozasadnyy)
-* Idea: [Vitaliy Zasadnyy](https://github.com/zasadnyy)
+- Squash commits
+- Lint your code with eslint (config provided)
+- Include relevant test updates/additions
 
-See [list of contributors](https://github.com/gdg-x/zepplin/graphs/contributors)
+## Code of Conduct
 
-Maintainers: [@tasomaniac](https://github.com/tasomaniac) and [@ozasadnyy](https://github.com/ozasadnyy).
+Read the full version [Code of Conduct](/.github/CODE_OF_CONDUCT.md).
 
-### License
-Project is published under the [MIT license](https://github.com/gdg-x/zeppelin/blob/master/LICENSE.txt). Feel free to clone and modify repo as you want, but don't forget to add reference to authors :)
+## Contributors
+
+**Maintainer:** [Abraham Williams](https://github.com/abraham)
+**Authors:** [Oleh Zasadnyy](https://github.com/ozasadnyy) and [Sophie Huts](https://github.com/sophieH29).
+
+This project exists thanks to all the [people who contribute](https://github.com/gdg-x/hoverboard/graphs/contributors). [[Contribute](/.github/CONTRIBUTING.md)].
+
+<a href="https://github.com/gdg-x/hoverboard/graphs/contributors"><img src="https://opencollective.com/hoverboard/contributors.svg?width=890" /></a>
+
+## Sponsoring
+
+Most of the core team members, hoverboard contributors and contributors in the ecosystem do this open-source work in their free time. If you like this project and it makes your life easier, please donate.
+<a href="https://opencollective.com/hoverboard#backers" target="_blank"><img src="https://opencollective.com/hoverboard/backers.svg?width=890"></a>
+
+## License
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgdg-x%2Fhoverboard.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgdg-x%2Fhoverboard?ref=badge_large)
+
+The project is published under the [MIT license](/LICENSE.md).
+Feel free to clone and modify repo as you want, but don't forget to add a reference to authors :)
+
+_GDG[x] is not endorsed and/or supported by Google, the corporation._
